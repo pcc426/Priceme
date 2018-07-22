@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae8b8d87-f904-4f0f-a138-e3ab76a609e9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/recommend/vendor_detail.php.bak" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recommend/homepage.php" afterPath="$PROJECT_DIR$/recommend/homepage.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recommend/homepage.php.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recommend/homepage.php.orig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recommend/pro_detail.php.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recommend/recom_home.php.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recommend/vendor_detail.php.bak" afterPath="" />
     </list>
     <ignored path="Priceme2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -219,9 +220,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
           <folding>
-            <marker date="1532233611216" expanded="true" signature="2416:2441" placeholder="select * fro... vendor_type" />
-            <marker date="1532233611216" expanded="true" signature="4251:4347" placeholder="select * fro... vendor_info" />
-            <marker date="1532233611216" expanded="true" signature="6782:6807" placeholder="select * fro... vendor_info" />
+            <marker date="1532233992766" expanded="true" signature="2416:2441" placeholder="select * fro... vendor_type" />
+            <marker date="1532233992766" expanded="true" signature="4251:4347" placeholder="select * fro... vendor_info" />
+            <marker date="1532233992766" expanded="true" signature="6782:6807" placeholder="select * fro... vendor_info" />
           </folding>
         </state>
       </provider>
@@ -257,9 +258,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
           <folding>
-            <marker date="1532233611216" expanded="true" signature="2416:2441" placeholder="select * fro... vendor_type" />
-            <marker date="1532233611216" expanded="true" signature="4251:4347" placeholder="select * fro... vendor_info" />
-            <marker date="1532233611216" expanded="true" signature="6782:6807" placeholder="select * fro... vendor_info" />
+            <marker date="1532233992766" expanded="true" signature="2416:2441" placeholder="select * fro... vendor_type" />
+            <marker date="1532233992766" expanded="true" signature="4251:4347" placeholder="select * fro... vendor_info" />
+            <marker date="1532233992766" expanded="true" signature="6782:6807" placeholder="select * fro... vendor_info" />
           </folding>
         </state>
       </provider>
@@ -335,9 +336,9 @@
         <state vertical-scroll-proportion="0.37037036">
           <caret line="104" column="29" selection-start-line="104" selection-start-column="29" selection-end-line="104" selection-end-column="29" />
           <folding>
-            <marker date="1532233611216" expanded="true" signature="2416:2441" placeholder="select * fro... vendor_type" />
-            <marker date="1532233611216" expanded="true" signature="4251:4347" placeholder="select * fro... vendor_info" />
-            <marker date="1532233611216" expanded="true" signature="6782:6807" placeholder="select * fro... vendor_info" />
+            <marker date="1532233992766" expanded="true" signature="2416:2441" placeholder="select * fro... vendor_type" />
+            <marker date="1532233992766" expanded="true" signature="4251:4347" placeholder="select * fro... vendor_info" />
+            <marker date="1532233992766" expanded="true" signature="6782:6807" placeholder="select * fro... vendor_info" />
           </folding>
         </state>
       </provider>

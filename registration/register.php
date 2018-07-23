@@ -42,14 +42,16 @@ else
         $result=mysqli_query($con,$sql);
         if(!$result)
         {
-            echo"Register Unsuccessful！";
-            echo"<a href='registerForm.php'>返回</a>";
+            echo"<script>
+                        confirm('Register Failed!');
+                        setTimeout(function(){window.location.href='../registration/registerForm.php';});
+                  </script> ";
         }
         else
         {
-            echo"Register successful! 
-            <br> Please input 
-                 $userCategory information";
+            echo"<script>
+                        confirm('Register successfully! Please input $userCategory information.');
+                  </script> ";
         }
     }
 }
@@ -57,14 +59,14 @@ if($userCategory=="Customer")
 {   $userID=$getID=mysqli_insert_id($con);//$getID即为最后一条记录的ID
     $url = "./customer_Form.php";
     echo "<script type='text/javascript'>";
-    echo "setTimeout(\"window.location.href='".$url."?userID=".$userID."'\",3000)";
+    echo "setTimeout(\"window.location.href='".$url."?userID=".$userID."'\")";
     echo "</script>";
 }
 if($userCategory=="Vendor")
 {   $userID=$getID=mysqli_insert_id($con);//$getID即为最后一条记录的ID
     $url = "./vendor_Form.php";
     echo "<script type='text/javascript'>";
-    echo "setTimeout(\"window.location.href='".$url."?userID=".$userID."'\",3000)";
+    echo "setTimeout(\"window.location.href='".$url."?userID=".$userID."'\")";
     echo "</script>";
 }
 ?>  

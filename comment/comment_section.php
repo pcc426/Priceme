@@ -64,7 +64,7 @@ $userLogged=checkUserLogon();
 if( $userLogged ){
 	// fetch user id
 	$nowUserID = isset($_SESSION['userID']) ? $_SESSION['userID'] : "";
-
+    $userID = $_SESSION['userName'];
 	$orderID = $_GET['order_id'];
 
     $OrderIDfetch = db_select_order_by_OrderID($orderID);
@@ -159,11 +159,11 @@ if( $userLogged ){
 								</div>
 							<?php }else if(!$userNoComment){ ?>
 								<div class="alert mt-4 alert-success">
-									<span class="badge badge-pill badge-success">Welcome <?php echo $nowUserID ?> !!</span> Please, place & pay for an order to comment on it.
+									<span class="badge badge-pill badge-success">Welcome <?php echo $userID ?> </span> Please, place & pay for an order to comment on it.
 								</div>
 							<?php }else{ ?>
 								<div class="alert mt-4 alert-success">
-									<span class="badge badge-pill badge-success">Welcome <?php echo $nowUserID ?> !!</span> Let us know what you think about your last order.
+									<span class="badge badge-pill badge-success">Welcome <?php echo $userID ?> </span> Let us know what you think about your last order.
 								</div>
 							<?php } ?>
 
@@ -188,7 +188,7 @@ if( $userLogged ){
                            echo '      <div class="comment-init">                                                                                                       ';
                            // previous order/comment
                            echo '         <div class="comment-order">                                                                                                   ';
-                           echo '            <p id="text-order">Your order ID</p>                                                                                      ';
+                           echo '            <p id="text-order">Your order ID:</p>                                                                                      ';
                            echo '         </div>                                                                                                                        ';
                            // user name
                            echo '         <div class="comment-name">                                                                                                    ';
@@ -221,13 +221,13 @@ if( $userLogged ){
 									echo '				</div>                                                                                                                     ';
                                     echo '				</div>                                                                                                                     ';
 
-                                    echo '<div class="vendor-rating">Vendor Score: ';
+                                    echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="vendor-rating">Vendor Score: ';
 
-                                    echo ' PERFECT &nbsp<input type="radio"  name="vendor-rate" checked = "checked" value = "5"> '     ;
+                                    echo ' <input type="radio"  name="vendor-rate" checked = "checked" value = "5">&nbsp;PERFECT '     ;
 
-                                    echo '  OK &nbsp<input type="radio"  name="vendor-rate"  value = "3">'     ;
+                                    echo '  <input type="radio"  name="vendor-rate"  value = "3">&nbsp;OK '     ;
 
-                                    echo ' AWFUL &nbsp<input type="radio"  name="vendor-rate"  value = "1"> '     ;
+                                    echo ' <input type="radio"  name="vendor-rate"  value = "1">&nbsp;AWFUL '     ;
 
 
                                     echo '</div>';

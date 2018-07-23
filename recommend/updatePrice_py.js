@@ -8,11 +8,17 @@
 
 
 //$(document).ready(function(){
-//    checkPythonResults();
+//    //checkPythonResults();
+//    //$('#updPrice').click(checkPythonResults());
+//    document.getElementById("updPrice").addEventListener('click', checkPythonResults(), false);
 //
 //});
-//$(document).getElementById("updPrice").onclick = checkPythonResults();
-$('#updPrice').click(checkPythonResults());
+window.onload = function(){
+    var btn = document.getElementById("updPrice");
+    btn.addEventListener('click', checkPythonResults(), false);
+}
+
+
 
 function checkPythonResults(){
     var execRes = "";

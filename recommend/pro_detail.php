@@ -21,8 +21,8 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if(isset($_SESSION['login_user_id'])){
-    $userID = $_SESSION['login_user_id'];
+if(isset($_SESSION['userName'])){
+    $userID = $_SESSION['userName'];
 }
 
 
@@ -106,7 +106,7 @@ if(isset($_SESSION['login_user_id'])){
                             <tr>
                                 <td>
                                     <input type= "hidden" name = "pro_id" value= "<?php echo $pro_id ?>" />
-                                    <button type="submit" value="Buy" style="width:70px;height:50px;color: #000;">Buy</button>
+                                    <button type="submit" value="Buy" style="width:70px;height:40px;color: #fff;background-color: #ca1515;border: 1px;border-radius: 10px;">Buy</button>
                                 </td>
                             </tr>
                         </table>

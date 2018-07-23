@@ -33,11 +33,6 @@ if(isset($_SESSION['userName'])){
 </head>
 
 <body style="line-height:1;">
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="./updatePrice_py.js"></script>
-
-
 <div id="loading"></div>
 <div id="app"  style="display:none;" >
     <div>
@@ -89,18 +84,11 @@ if(isset($_SESSION['userName'])){
                                     </select>
                             </td>
                             <td>
-                                <!-- enter键触发windows事件,enter键的ASCII是13 -->
+                                <!-- enter键处发windows事件,enter键的ASCII是13 -->
                                 <input class="textbox" id="productName" size="20" onKeyPress="if(event.keyCode==13){searchFormSubmit();return false;}" name="productName" type="text" />
                             </td>
                             <td>
                                 <input type="submit" value="Search" class="textbox" style="color: #fff;background-color: #d44a4d; border-radius: 5px";>
-                            </td>
-                            <td>
-                                <button id="updPrice">Refresh Price!</button>
-                            </td>
-                            <td>
-                                <label>update results:</label>
-                                <div id="python-result"> </div>
                             </td>
                         </tr>
                     </table>

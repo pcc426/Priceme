@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	<head>
 		<meta charset="utf-8">
 		
-		<title>Unicorn Restaurant - Login</title>
+		<title>Priceme - Login</title>
 		
 		<?php include_once("../import.php");?>
 		
@@ -137,9 +137,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 }else{
                                     echo'
                                     <div class="container">
-									<h3>Login</h3>
+                                    <br>
+									<h3 style="color:#ca1515">Login</h3>
 									<hr>
-									<label class="mandatory_field">* Mandatory field</label><br>
+									<label class="mandatory_field">* Mandatory field</label><br><br>
 									<div>
 										<label class="login_label">User ID / Email : </label><label class="mandatory_field">*</label> 
 										<input class="login_input" type="text" id="userIDEmail" name="userIDEmail" maxlength="50"  >
@@ -153,8 +154,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 									</div>
 									<br><br>
 									<div>
-									  <input class="login_input4" type="reset" name="Reset" value="Reset" onclick="resetErrMsg();">
-									  <input class="login_input5" type="submit" name="login" value="Login">
+									 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									 <input class="login_input4" type="reset" name="Reset" value="Reset" onclick="resetErrMsg();">
+									 <input class="login_input5" type="submit" name="login" value="Login">
 									</div>
 								</div>
                                     ';

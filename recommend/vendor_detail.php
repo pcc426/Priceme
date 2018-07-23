@@ -12,6 +12,13 @@ $sql2="select * from vendor_info where userID='$user_id'";
 $result2=mysqli_query($conn,$sql2);
 $data2=mysqli_fetch_array($result2);
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if(isset($_SESSION['userName'])){
+    $userID = $_SESSION['userName'];
+}
 ?>
 
 <html>

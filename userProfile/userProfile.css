@@ -53,12 +53,12 @@ label.update_user_profile_label3 {
 
 input.profile_button {
 	width: 20%;
-	margin-right: 2.5em;
+
 	margin-bottom: 2.5em;
 	display: inline-block;
 	height: 50px;
-	text-align: center;
-	background-color: skyblue;
+	margin-left: 150px;
+	background-color: #ca1515;
 	color: #fff;
 	border: none;
 }
@@ -79,7 +79,7 @@ input.profile_input2 {
 }
 
 .button_alignment {
-	text-align: center;
+
 }
 
 .stop_floating_alignment{

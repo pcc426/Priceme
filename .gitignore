@@ -106,5 +106,8 @@ venv.bak/
 #conflics
 .orig
 
-#pycharm
+#customized folders
 .idea/
+images/
+resources/
+*.bak

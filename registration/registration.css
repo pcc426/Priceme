@@ -16,7 +16,7 @@ label.reg_label2 {
 label.reg_label3 {
 	display: inline-block;	
 	width: 45%;
-	text-align: left;
+
 	font-weight:bold;
 }
 
@@ -51,9 +51,9 @@ span.reg_info {
 input.reg_input3[type=checkbox] {
 	display: inline-block;	
 	width: 5%;
-	text-align: right;
-	zoom: 2;
-	vertical-align: text-bottom;
+	margin-left: 130px;
+	zoom: 1;
+	vertical-align: center;
 }
 
 input.reg_input4[type=reset] {
@@ -63,7 +63,7 @@ input.reg_input4[type=reset] {
 	display: inline-block;
 	height: 50px;
 	text-align: center;
-	background-color: skyblue;
+	background-color: #ca1515;
 	color: #fff;
 	border: none;
 }
@@ -75,7 +75,7 @@ input.reg_input5[type=submit] {
 	display: inline-block;
 	height: 50px;
 	text-align: center;
-	background-color: skyblue;
+	background-color: #ca1515;
 	color: #fff;
 	border: none;
 }
@@ -95,11 +95,11 @@ label.mandatory_field {
 }
 
 .button_alignment {
-	text-align: center;
+	margin-left: 150px;
 }
 
 input.reg_radio[type=radio] {
-	zoom: 2;
+	zoom: 1;
 }
 /******** [END] Account registration style ********/
 

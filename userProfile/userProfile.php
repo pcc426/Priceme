@@ -18,6 +18,7 @@ if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
 $userID = $_SESSION['userID'];
+$userName = $_SESSION['userName'];
 
 $con=mysqli_connect("localhost","root","","DPS");
 $sql_profile= "select customerName,customerEmail,customerTel from customer_info where userID='$userID' ";
@@ -67,11 +68,23 @@ $order_amount = mysqli_num_rows($result_order);
 						<!-- ******** [START] Navigation Body ******** -->
 						<div>
 							<div>
-
+                                <div class="alert mt-4 alert-success">
+                                    <?php
+                                    if(isset($_successMsg) && !empty($_successMsg)){
+                                        echo "$_successMsg";
+                                    }else{
+                                        if(isset($userName)){
+                                            echo "<span class='badge badge-pill badge-success'>Welcome ".$userName."</span> We promise to provide the best price for you！";
+                                        }else{
+                                            echo "We promise to provide the best price for you！";
+                                        }
+                                    }
+                                    ?>
+                                </div>
 								<!-- ******** [START] User Profile Division ******** -->
-								<h3>Profile</h3>
-								<hr>
-									<div class="profile_info">
+								<br><h3>&nbsp;User Profile</h3>
+
+                                <br><div class="profile_info">
 										<div class="user_profile_label"><label>User ID : </label></div>
 										<div class="user_profile_label2"><label><?php if(isset($userID)){echo $userID;} ?></label></div><br>
 										
@@ -82,50 +95,15 @@ $order_amount = mysqli_num_rows($result_order);
 										<div class="user_profile_label2"><label><?php if(isset($customerName)){echo $customerName;} ?></label></div><br>
 										<div class="user_profile_label"><label>Contact Phone No. : </label></div>
 										<div class="user_profile_label2"><label><?php if(isset($customerTel)){echo $customerTel;} ?></label></div><br>
-                                        <hr>
-                                        <table style='text-align:left;' border='1'>
-                                            <tr>
-                                                <th>Order ID</th>
-                                                <th>Product Name</th>
-                                                <th>Promotion ID</th>
-                                                <th>Payment Channel</th>
-                                                <th>Order Time</th>
-                                                <th>Price</th>
-                                                <th>Comment</th>
-                                                <th></th>
-                                            </tr>
-                                        <?php
-                                        for($i=0;$i<$order_amount;$i++){
-                                            $sql = mysqli_fetch_assoc($result_order);
-                                            $orderID=$sql['orderID'];
-                                            $productID = $sql['productID'];
 
-                                            $productName= getProductName($productID);
-                                            $promotionID = $sql['promotionID'];
-                                            $paymentChannel = $sql['paymentChannel'];
-                                            $orderTime = $sql['orderTime'];
-                                            $orderPrice = $sql['orderPrice'];
-                                            $commentContent = $sql['commentContent'];
-                                            echo "<tr>
-                                                    <td>$orderID</td>
-                                                    <td>$productName</td>
-                                                    <td>$promotionID</td>
-                                                    <td>$paymentChannel</td>
-                                                    <td>$orderTime</td>
-                                                    <td>$orderPrice</td>
-                                                    <td>$commentContent</td>
-                                                    <td><a href=\"comment.php\">Add Comment</a></td>
-                                                  </tr>";
-                                        }
-                                        ?>
-                                        </table>
+
 									</div>
 
 									
 									<div class="stop_floating_alignment"></div>
 									<hr>
 									<div class="button_alignment">
-										<input class="profile_button" type="button" value="OK" onclick=location.href='homepage.php'>
+										<input class="profile_button" type="button" value="OK" onclick=location.href='../recommend/homepage.php'>
 									</div>
 								<!-- ******** [END] User Profile Division ******** -->
 

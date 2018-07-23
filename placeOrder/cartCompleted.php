@@ -68,7 +68,7 @@ if (!empty($_POST["okBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: ./cart.php');
         exit;
     }else{
-    	$cartInfoMsg_php = "[I201] Placed order successfully! The order number is " . $_placedOrderID . " !";
+    	$cartInfoMsg_php = "Placed order successfully! The order number is " . $_placedOrderID . " !";
     }
     
     if (session_status() == PHP_SESSION_NONE) {

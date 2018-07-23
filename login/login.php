@@ -51,22 +51,17 @@ include_once("../common/functions.php");
                  $data = mysqli_fetch_array($result);
                  $_SESSION['userID']=$data['userID'];
                  $_SESSION['userName']=$data['userName'];
-                 echo"Welcome Back ";
+                 echo"<script>
+                        confirm('Welcome Back!');
+                        setTimeout(function(){window.location.href='../recommend/homepage.php';});
+                       </script>";
                  //echo $_SESSION['userID'];
-                 echo $_SESSION['userName'];
-                 echo"
-                 <script>
-                 setTimeout(function(){window.location.href='../recommend/homepage.php';},2000);
-                 </script>";
                    exit;
              }else{
-                echo "用户名或密码错误";
-                echo "
-                    <script>
-                          setTimeout(function(){window.location.href='../recommend/homepage.php';},2000);
-                    </script>
-
-                ";//如果错误使用js 1秒后跳转到登录页面重试;
+                echo "<script>
+                        confirm('Wrong user name or password!');
+                        setTimeout(function(){window.location.href='../login/loginForm.php';});
+                       </script>";//如果错误使用js 1秒后跳转到登录页面重试;
              }
 
 

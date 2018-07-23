@@ -8,11 +8,11 @@ check_session_timeout();
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-
-
-if (isset($_SESSION['userID'])) {
-    $userID = $_SESSION['userID'];
+if(isset($_SESSION['userName'])){
+    $userID = $_SESSION['userName'];
 }
+
+
 
 $isFormDataValid = true;
 
@@ -376,9 +376,9 @@ if (!empty($_POST["SubmitBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
                                 if (isset($userID)) { ?>
                                     <span class='badge badge-pill badge-success'>Welcome <?php if (isset($userID)) {
                                             echo $userID;
-                                        } ?></span> We promise to deliver the freshest foods to you as soon as possible.
+                                        } ?></span> We promise to provide the best price for you！
                                 <?php } else { ?>
-                                    <span class="cart_info" id="cartInfoMsg">We promise to deliver the freshest foods to you as soon as possible.</span>
+                                    <span class="cart_info" id="cartInfoMsg">We promise to provide the best price for you！</span>
                                 <?php }
                             }
                             ?>
@@ -388,7 +388,7 @@ if (!empty($_POST["SubmitBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <!-- ******** [START] Shopping Cart Division ******** -->
                         <!-- ******** Confirm Order Details ******** -->
-                        <h5>Order Details</h5>
+                        <h5>&nbsp;&nbsp;Order Details</h5>
                         <div class="orderTable">
                             <div class="orderTableHeading">
                                 <div class="orderTableHead"><strong>Product Name</strong></div>
@@ -405,15 +405,14 @@ if (!empty($_POST["SubmitBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
                             $_price = $orderDetail4Display->getPrice();
                             $_description = $orderDetail4Display->getDescription();
 
-
                             echo "<div class='orderTableRow'>";
                             echo "<div class='orderTableCell'>" . $_productName . "</div>";
                             if(!isset($_image)){
                             	echo "<div class='orderTableCell'></div>";
                             }else{
-                            	echo "<div class='orderTableCell'><img src='$_image' width='150px' height='100px'></div>";
+                            	echo "<div class='orderTableCell'><img src='$_image' width='200px' height='100px'></div>";
                             }
-                            echo "<div class='orderTableCell'>" . $_description . "</div>";
+                            echo "<div class='orderTableCell' style='width:300px;'>" . $_description . "</div>";
                             echo "<div class='orderTableCellAmt'>$" . $_price . "</div>";
                             echo "<input type='hidden' name='selectedProduct' value='" . $_productID . "'>";
 

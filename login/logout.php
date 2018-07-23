@@ -52,7 +52,10 @@ if(isset($_GET["logoutMsg"])){
 								<label><span style="color:red"><?php echo $_logoutMsg;?></span></label>
 								<?php }else {?>
 								<br><br>
-								<label><h1>Logout successfully!</h1></label>
+                                <?php echo"<script>
+                                    confirm('Logout successfully!');
+                                    setTimeout(function(){window.location.href='../recommend/homepage.php';});
+                                </script>";?>
 								<p style="margin-bottom: 10em;>
 								<?php }?>									
 								<!-- ******** [END] Logout Division ******** -->

@@ -26,7 +26,7 @@ input.login_input4[type=reset] {
 	display: inline-block;
 	height: 50px;
 	text-align: center;
-	background-color: skyblue;
+	background-color: #ca1515;
 	color: #fff;
 	border: none;
 }
@@ -38,7 +38,7 @@ input.login_input5[type=submit] {
 	display: inline-block;
 	height: 50px;
 	text-align: center;
-	background-color: skyblue;
+	background-color: #ca1515;
 	color: #fff;
 	border: none;
 }

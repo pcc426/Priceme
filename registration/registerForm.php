@@ -52,20 +52,20 @@
 
 									<div>
 										<label class="reg_label">User Category : </label>
-										<input class="reg_radio" type="radio" name="userCategory" value="Customer"  />Customer
-										<input class="reg_radio" type="radio" name="userCategory" value="Vendor" />Vendor
+										<input class="reg_radio" type="radio" name="userCategory" value="Customer"  />&nbsp;Customer
+										<input class="reg_radio" type="radio" name="userCategory" value="Vendor" />&nbsp;Vendor
 									<div>
 									<hr>
 									<br>
 									<div>
 										<input class="reg_input3" type="checkbox" id="tc" name="tc" value="agree" >
-										<label class="reg_label3">By creating an account you agree to our <a href="./registerTerms&Conditions.php" >Terms & Conditions</a>.<label class="mandatory_field">*</label></label>
+										<label class="reg_label3">To create an account,you should agree to our <a href="./registerTerms&Conditions.php" >Terms & Conditions</a>.<label class="mandatory_field">*</label></label>
 										<span class="reg_err" id="tcMsg" ><?php if(isset($tcMsg_php)){echo $tcMsg_php;} ?></span>
 									<div>
 
 									<hr>
 
-									<p></p>
+
 
 									<div>
 									  <div class="button_alignment">

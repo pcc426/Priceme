@@ -38,15 +38,17 @@ $sql="insert into customer_info (userID,customerName,customerEmail,customerTel) 
         $result=mysqli_query($con,$sql);
         if(!$result)
         {
-            echo"Register Unsuccessful！";
-            echo"<a href='registerForm.php'>返回</a>";
+            echo"<script>
+                        confirm('Register failed!');
+                        setTimeout(function(){window.location.href='../registration/registerForm.php';});
+                  </script>";
         }
         else
         {
-            echo"Register Successful!";
-            echo "<script type='text/javascript'>";
-            echo "setTimeout(\"window.location.href='../recommend/homepage.php'\",2000)";
-            echo "</script>";
+            echo"<script>
+                        confirm('Register successfully!');
+                        setTimeout(function(){window.location.href='../recommend/homepage.php';});
+                  </script>";
 
 
 }

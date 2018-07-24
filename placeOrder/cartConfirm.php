@@ -68,8 +68,8 @@ if (!empty($_POST["ConfirmBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 //        }
 //    }
 
-    $now = date("Y-m-d h:i:sa");
-    $expiryDate = date("Y-m-d h:i:sa", strtotime($now.' + 1 day')); //expiry date = current date + 2 days
+    @$now = date("Y-m-d h:i:sa");
+    @$expiryDate = date("Y-m-d h:i:sa", strtotime($now.' + 1 day')); //expiry date = current date + 2 days
 
 
 
@@ -206,7 +206,7 @@ if (!empty($_POST["ConfirmBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     unset($_SESSION['cheque_no']);
 
     //go back to cart.php
-    header('Location: ./cart.php');
+    header('Location: ../recommend/homepage.php');
     exit;
 }
 else{
@@ -298,9 +298,9 @@ else{
                                     if (isset($userID)) { ?>
                                         <span class='badge badge-pill badge-success'>Welcome <?php if (isset($userID)) {
                                                 echo $userID;
-                                            } ?></span> We promise to provide the best price for you！
+                                            } ?></span> We promise to provide the best price for you!
                                     <?php } else { ?>
-                                        <span class="cart_info" id="cartInfoMsg">We promise to provide the best price for you！</span>
+                                        <span class="cart_info" id="cartInfoMsg">We promise to provide the best price for you! </span>
                                     <?php }
                                 }
                                 ?>
@@ -323,23 +323,28 @@ else{
 								<!-- ******** [START] Shopping Cart Division ******** -->
 								<!-- ******** Confirm Order Details ******** -->
 								<h5>&nbsp;&nbsp;Order Details</h5>
-                				<div class="orderTable">
-                    				<div class="orderTableHeading">
-                                        <div class="orderTableHead"><strong>Product Name</strong></div>
-                                        <div class="orderTableHead"><strong>Image</strong></div>
-                                        <div class="orderTableHead">Description</div>
+                                <div class="orderTable">
+                                    <div class="orderTableHeading">
+                                        <div class="orderTableHead" style="width : 300px" ><strong>Product Name</strong></div>
+                                        <div class="orderTableHead" style="width : 250px"><strong>Image</strong></div>
+                                        <div class="orderTableHead" >Description</div>
                                         <div class="orderTableCellAmt">Price</div>
-                       				</div>
+
+                                    </div>
                     				<?php
 
 
                                     echo "<div class='orderTableRow'>";
-                    					echo "<div class='orderTableCell'>".$_productName."</div>";
-                    					echo "<img src='$_image' width='150px' height='128px'>";
-                                        echo "<div class='orderTableCell'>".$_description."</div>";
-                    					echo "<div class='orderTableCellAmt'>$".$_price."</div>";
-                                        echo "<input type='hidden' name='selectedProduct' value='" . $_productID . "'>";
-                                        echo "</div>";
+                                    echo "<div class='orderTableCell'>".$_productName."</div>";
+                                    if(!isset($_image)){
+                                        echo "<div class='orderTableCell'></div>";
+                                    }else{
+                                        echo "<div class='orderImg' ><img src='$_image' width='200px' height='128px'></div>";
+                                    }
+                                    echo "<div class='orderTableCell' style=\"padding: 5px 10px 20px;\">".$_description."</div>";
+                                    echo "<div class='orderTableCellAmt'>$" . $_price . "</div>";
+                                    echo "<input type='hidden' name='selectedProduct' value='" . $_productID . "'>";
+                                    echo "</div>";
 
                     				?>
                 				  </div>

@@ -1,7 +1,8 @@
 <?php
-error_reporting(E_ALL ^ E_NOTICE);//±¨´í¼¶±ðÉèÖÃ
-     $conn=mysqli_connect("localhost","root","") or die("Êý¾Ý¿â·þÎñÆ÷Á¬½Ó´íÎó".mysql_error());
-     mysqli_select_db($conn,"dps") or die("Êý¾Ý¿â·ÃÎÊ´íÎó".mysql_error());
+error_reporting(E_ALL ^ E_NOTICE);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//     $conn=mysqli_connect("127.0.0.1","root","") or die("ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó´ï¿½ï¿½ï¿½".mysql_error());
+     $conn=mysqli_connect("127.0.0.1","root","") or die("DB connection failed!".mysql_error());
+     mysqli_select_db($conn,"dps") or die("DB connection failed!".mysql_error());
      //mysqli_query($conn,$sql);
 date_default_timezone_set('PRC');
 define('SYS_ROOT', str_replace("\\", '/', dirname(__FILE__)));
@@ -18,7 +19,7 @@ function cnsubstr($str, $start = 0, $length, $charset = "gb2312", $suffix = fals
     $slice = join ( "", array_slice ( $match [0], $start, $length ) );
     if ($suffix)
 	{
-        return $slice . "¡­";
+        return $slice . "ï¿½ï¿½";
 	}
 	else
 	{
@@ -55,7 +56,7 @@ while($row=mysql_fetch_array($result))
 	}
 
 	echo "</select>";
-	//¶ÁÈ¡×Ó·ÖÀà
+	//ï¿½ï¿½È¡ï¿½Ó·ï¿½ï¿½ï¿½
 
 	 $sql1="select * from categories where reid='$initid'";
 	 	$result1=mysql_query($sql1);
@@ -106,7 +107,7 @@ function upfile($inputname, $type, $file = null)
 	}
 	return $file;
 }
-//·ÖÒ³º¯Êý.
+//ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½.
 function get_pager($url, $param, $count, $page = 1, $size = 10)
 {
     $size = intval($size);

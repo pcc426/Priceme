@@ -19,7 +19,7 @@ td[colspan="3"]{text-align:right;}
 table,table tr th, table tr td { border:1px solid #ddd; }
 
 .info{
-	width:500px;
+	width:1000px;
 	margin:10px;
 
 	border:1px solid #ddd;
@@ -48,7 +48,15 @@ table,table tr th, table tr td { border:1px solid #ddd; }
     	display: table-cell;
     	padding: 3px 10px;
     	border: 1px solid #999999;
+
 }
+
+.orderImg {
+	display: table-cell;
+	padding: 15px 10px;
+	border: 1px solid #999999;
+}
+
 .orderTableCellAmt {
     	display: table-cell;
     	padding: 3px 10px;

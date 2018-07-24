@@ -70,7 +70,7 @@ if(isset($_SESSION['userName'])){
                         <tr>
                             <td>
                                     <select name="vendorType" style="width: 150px;" class="textbox">
-                                        <option value="">Please choose</option>
+                                       <option value="1">Please choose</option>
                                         <?php
                                         $sql2="select * from vendor_type";
                                         $result2=mysqli_query($conn,$sql2);
@@ -98,7 +98,14 @@ if(isset($_SESSION['userName'])){
                             <tr>
                                 <?php
                                 $i=0;
+								if($POST_vendorType="1"){
+									$sql3="select * from vendor_info where vendorName like '%$productName%'";
+								}
+								else if($POST_productName=""){
+									$sql3="select * from vendor_info where vendorTypeID = '$vendorType'";
+								}else{
                                 $sql3="select * from vendor_info where vendorTypeID = '$vendorType'and vendorName like '%$productName%'";
+								}
                                 $result3=mysqli_query($conn,$sql3);
                                 while($data3=mysqli_fetch_array($result3)){
                                     if($i%4==0 &&$i!=0) echo "</tr><tr><td colspan=5 height=10></td></tr><tr>";

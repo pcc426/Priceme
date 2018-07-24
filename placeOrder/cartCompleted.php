@@ -145,7 +145,6 @@ if (!empty($_POST["okBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-<form name="cartForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" onsubmit="return confirmFormSubmit()">
     <div id="loading"></div>
     <div id="app"  style="display:none;" >
         <div>
@@ -171,9 +170,9 @@ if (!empty($_POST["okBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
                                 <span class="cart_err" id="cartMsg" ><?php if(isset($cartMsg_php)){echo $cartMsg_php;} ?></span>";
                             <?php }else{
                                 if(isset($userID)){ ?>
-                                    <span class='badge badge-pill badge-success'>Welcome <?php if(isset($userID)){echo $userID;} ?></span> We promise to deliver the freshest foods to you as soon as possible.
+                                    <span class='badge badge-pill badge-success'>Welcome <?php if(isset($userID)){echo $userID;} ?></span>
                                 <?php 		}else{ ?>
-                                    <span class="cart_info" id="cartInfoMsg" >We promise to deliver the freshest foods to you as soon as possible.</span>
+                                    <span class="cart_info" id="cartInfoMsg" ></span>
                                 <?php }
                             }
                             ?>
@@ -187,10 +186,11 @@ if (!empty($_POST["okBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
                         <h5>Order Details</h5>
                         <div class="orderTable">
                             <div class="orderTableHeading">
-                                <div class="orderTableHead"><strong>Product Name</strong></div>
-                                <div class="orderTableHead"><strong>Image</strong></div>
-                                <div class="orderTableHead">Description</div>
+                                <div class="orderTableHead" style="width : 300px" ><strong>Product Name</strong></div>
+                                <div class="orderTableHead" style="width : 250px"><strong>Image</strong></div>
+                                <div class="orderTableHead" >Description</div>
                                 <div class="orderTableCellAmt">Price</div>
+
                             </div>
                             <?php
                             $orderDetail4Display = unserialize($_SESSION['orderDetail4Display']) ;
@@ -205,9 +205,13 @@ if (!empty($_POST["okBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
                             echo "<div class='orderTableRow'>";
                             echo "<div class='orderTableCell'>".$_productName."</div>";
-                            echo "<img src='$_image' width='150px' height='100px'>";
-                            echo "<div class='orderTableCell'>".$_description."</div>";
-                            echo "<div class='orderTableCellAmt'>$".$_price."</div>";
+                            if(!isset($_image)){
+                                echo "<div class='orderTableCell'></div>";
+                            }else{
+                                echo "<div class='orderImg' ><img src='$_image' width='200px' height='128px'></div>";
+                            }
+                            echo "<div class='orderTableCell' style=\"padding: 5px 10px 20px;\">".$_description."</div>";
+                            echo "<div class='orderTableCellAmt'>$" . $_price . "</div>";
                             echo "<input type='hidden' name='selectedProduct' value='" . $_productID . "'>";
                             echo "</div>";
 
@@ -237,7 +241,7 @@ if (!empty($_POST["okBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <div>
-                            <input class="placeOrder_button" type="submit" id="okBtn" name="CancelBtn" value="Back">
+                            <a href="../recommend/homepage.php" ><input class="placeOrder_button" type="submit"  name = "Back" value="Back"></a>
 
                         </div>
                     </div>
@@ -259,7 +263,6 @@ if (!empty($_POST["okBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
 
     </div>
     </div>
-   
-</form>
+
 </body>
 </html>

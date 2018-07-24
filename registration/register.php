@@ -20,7 +20,8 @@
 </html>
 <?php
 include_once("../common/functions.php");
-$con=mysqli_connect("localhost","root","","DPS");
+//$con=mysqli_connect("localhost","root","","DPS");
+$con=mysqli_connect("127.0.0.1","root","","dps");
 $userName=$_POST['userName'];
 $pass=$_POST['pass'];
 $repeatPass=$_POST['repeatPass'];

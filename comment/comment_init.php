@@ -166,7 +166,7 @@ if ($userLogged) {
 
                                 $time = $order["orderTime"];
 
-                                if ($productScore == "" && $vendorScore == "" && $comment == "") {
+                                if ($productScore == "" || $vendorScore == "" || $comment == "") {
 
                                     echo '	<!--hide values passed by form-->                                                                                                   ';
                                     echo '	<!--userID-->                                                                                                                       ';
@@ -187,7 +187,7 @@ if ($userLogged) {
 
                                     echo '         <div class = "comment-submit">';
                                     echo '            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Product Name: &nbsp;' . $productName . '                                                                  ';
-                                    echo '              <a href="comment_section.php?order_id='.$orderID.'">
+                                    echo '              <a href="comment_section.php?order_id='.$orderID.'" style="float: right">
                                                             <button class="b1" style="background-color: #ca1515;border:none;color:#fff;border-radius: 5px;margin-left: 20px;">
                                                                 Comment
                                                             </button>
@@ -239,17 +239,17 @@ if ($userLogged) {
 
                                         echo ' <input type="radio"  name="vendor" disabled> &nbsp;PERFECT '     ;
 
-                                        echo '  <input type="radio"  name="vendor" disabled>&nbsp;OK'     ;
+                                        echo '  <input type="radio"  name="vendor" checked = "checked" disabled>&nbsp;OK'     ;
 
-                                        echo ' <input type="radio"  name="vendor"  checked = "checked" disabled>&nbsp;AWFUL  '     ;
+                                        echo ' <input type="radio"  name="vendor"   disabled>&nbsp;AWFUL  '     ;
 
                                     } elseif ($vendorScore == '5') {
 
-                                        echo ' <input type="radio"  name="vendor" disabled> &nbsp;PERFECT '     ;
+                                        echo ' <input type="radio"  name="vendor" checked = "checked" disabled> &nbsp;PERFECT '     ;
 
                                         echo '  <input type="radio"  name="vendor" disabled>&nbsp;OK'     ;
 
-                                        echo ' <input type="radio"  name="vendor"  checked = "checked" disabled>&nbsp;AWFUL  '     ;
+                                        echo ' <input type="radio"  name="vendor"   disabled>&nbsp;AWFUL  '     ;
 
                                     }
 

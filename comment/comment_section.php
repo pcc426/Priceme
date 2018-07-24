@@ -71,8 +71,7 @@ if( $userLogged ){
 
     $order = new Order($OrderIDfetch["orderID"],$OrderIDfetch["productID"],$OrderIDfetch["promotionID"],$OrderIDfetch["userID"],$OrderIDfetch["paymentChannel"],$OrderIDfetch["creditCardType"],$OrderIDfetch["creditCardNo"],$OrderIDfetch["creditCardSecurityCode"],$OrderIDfetch["creditCardHolderName"],$OrderIDfetch["creditCardExpiryDate"],$OrderIDfetch["checkNo"],$OrderIDfetch["orderTime"],$OrderIDfetch["orderPrice"],$OrderIDfetch["productScore"],$OrderIDfetch["commentContent"],$OrderIDfetch["vendorScore"],$OrderIDfetch["inventoryRate"],$OrderIDfetch["effectTimeLeft"]);
 
-	if( $order->getProductScore()==""){
-      // OrderID in not yet in comment table = enable comment
+	
 		$userNoComment = true;
 
 //        $order = new Order("","","","","","","","","","","","","","","","","","");
@@ -86,10 +85,6 @@ if( $userLogged ){
 
         $productName = $product->getProductName();
 
-	}else{
-      // OrderID is already in comment table = disable comment
-      $userNoComment = false;
-   }
 
 }
 

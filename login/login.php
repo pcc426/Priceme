@@ -38,7 +38,7 @@ include_once("../common/functions.php");
     if(!isset($_POST["login"])){
         exit("错误执行");
     }
-    $con=mysqli_connect("localhost","root","","DPS");
+    $con=mysqli_connect("127.0.0.1","root","","DPS");
     //include('connect.php');//链接数据库
     $userName = $_POST['userIDEmail'];//post获得用户名表单值
     $password = $_POST['pass'];//post获得用户密码单值

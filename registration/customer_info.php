@@ -28,7 +28,7 @@
 </html>
 <?php
 include_once("../common/functions.php");
-$con=mysqli_connect("localhost","root","","DPS");
+$con=mysqli_connect("127.0.0.1","root","","DPS");
 $userID=$_POST['userID'];
 $customerName=$_POST['customerName'];
 $email=$_POST['email'];

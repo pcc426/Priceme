@@ -4,7 +4,7 @@ include_once("database.php");
 //[START] Registration function
 
 function getProductName($productID){
-    $con=mysqli_connect("localhost","root","","DPS");
+    $con=mysqli_connect("127.0.0.1","root","","dps");
     $sql= "select productName from product where productID='$productID' ";
     $result = mysqli_query($con,$sql);
     $row = mysqli_fetch_array($result);

@@ -41,7 +41,7 @@
 		$dbname = "id5362689_unicorn";
 		*/
 	    
-	    $servername = "localhost";
+	    $servername = "127.0.0.1";
 	    $username = "root";
 	    $password = "";
 	    $dbname = "dps";
@@ -74,9 +74,9 @@
             $stmt = $dbconnection->prepare("insert into `order` 
                 (`productID`, `promotionID`, `userID`, `paymentChannel`, `creditCardType`, `creditCardNo`,
                  `creditCardSecurityCode`, `creditCardHolderName`, `creditCardExpiryDate`, `checkNo`, `orderTime`,
-                 `orderPrice`, `inventoryRate`,`effectTimeLeft`) 
+                 `orderPrice`, `productScore`,`vendorScore`,`inventoryRate`,`effectTimeLeft`) 
                  values(:productID,:promotionID,:userID, :paymentChannel, :creditCardType, :creditCardNo, :creditCardSecurityCode,
-                 :creditCardHolderName, :creditCardExpiryDate, :checkNo,'".$now ."',:orderPrice,:inventoryRate, :effectTimeLeft)");
+                 :creditCardHolderName, :creditCardExpiryDate, :checkNo,'".$now ."',:orderPrice,:productScore,:vendorScore,:inventoryRate, :effectTimeLeft)");
 
             $_productID = $order->getProductID();
             $_promotionID = $order->getPromotionID();
@@ -89,6 +89,8 @@
             $_creditCardExpiryDate = $order->getCreditCardExpiryDate();
             $_checkNo = $order->getCheckNo();
             $_orderPrice = $order->getOrderPrice();
+            $_productScore = 5;
+            $_vendorScore = 5;
             $_inventoryRate = $order->getInventoryRate();
             $_effectTimeLeft = $order->getEffectTimeLeft();
 
@@ -103,6 +105,8 @@
             $stmt->bindParam(':creditCardExpiryDate', 	    $_creditCardExpiryDate);
             $stmt->bindParam(':checkNo', 	$_checkNo);
             $stmt->bindParam(':orderPrice', 	$_orderPrice);
+            $stmt->bindParam(':productScore', 	$_productScore);
+            $stmt->bindParam(':vendorScore', 	$_vendorScore);
             $stmt->bindParam(':inventoryRate', 	$_inventoryRate);
             $stmt->bindParam(':effectTimeLeft', 	$_effectTimeLeft);
 

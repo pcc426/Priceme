@@ -67,6 +67,11 @@ if (!empty($_POST["SubmitBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     if (!isset($_SESSION['userID'])) {
         $cartMsg_php = "[E218] Please login first!";
         $isFormDataValid = false;
+        echo "
+                      <script>
+                        confirm('Please login first!');
+                        setTimeout(function(){window.location.href='../login/loginForm.php';});
+                       </script>";
     }
 
 // ******** [START] Quantity validation ********
@@ -391,9 +396,9 @@ if (!empty($_POST["SubmitBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
                         <h5>&nbsp;&nbsp;Order Details</h5>
                         <div class="orderTable">
                             <div class="orderTableHeading">
-                                <div class="orderTableHead"><strong>Product Name</strong></div>
-                                <div class="orderTableHead"><strong>Image</strong></div>
-                                <div class="orderTableHead">Description</div>
+                                <div class="orderTableHead" style="width : 300px" ><strong>Product Name</strong></div>
+                                <div class="orderTableHead" style="width : 250px"><strong>Image</strong></div>
+                                <div class="orderTableHead" >Description</div>
                                 <div class="orderTableCellAmt">Price</div>
 
                             </div>
@@ -406,15 +411,16 @@ if (!empty($_POST["SubmitBtn"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
                             $_description = $orderDetail4Display->getDescription();
 
                             echo "<div class='orderTableRow'>";
-                            echo "<div class='orderTableCell'>" . $_productName . "</div>";
+                            echo "<div class='orderTableCell'>".$_productName."</div>";
                             if(!isset($_image)){
                             	echo "<div class='orderTableCell'></div>";
                             }else{
-                            	echo "<div class='orderTableCell'><img src='$_image' width='200px' height='100px'></div>";
+                            	echo "<div class='orderImg' ><img src='$_image' width='200px' height='128px'></div>";
                             }
-                            echo "<div class='orderTableCell' style='width:300px;'>" . $_description . "</div>";
+                            echo "<div class='orderTableCell' style=\"padding: 5px 10px 20px;\">".$_description."</div>";
                             echo "<div class='orderTableCellAmt'>$" . $_price . "</div>";
                             echo "<input type='hidden' name='selectedProduct' value='" . $_productID . "'>";
+                            echo "</div>";
 
 
 

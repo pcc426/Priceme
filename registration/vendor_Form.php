@@ -49,7 +49,7 @@
                                     <div>
                                         <label class="reg_label">Vendor Type<label class="mandatory_field">*</label> : </label>
                                     <?php
-                                    $con=mysqli_connect("localhost","root","","DPS");
+                                    $con=mysqli_connect("127.0.0.1","root","","DPS");
                                     ?>
                                     <select id="vendorTypeID" name="vendorTypeID" style="width:100mm">
                                         <option value=0>--Please Select--</option>

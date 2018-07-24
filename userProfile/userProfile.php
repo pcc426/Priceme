@@ -20,7 +20,7 @@ if (session_status() == PHP_SESSION_NONE) {
 $userID = $_SESSION['userID'];
 $userName = $_SESSION['userName'];
 
-$con=mysqli_connect("localhost","root","","DPS");
+$con=mysqli_connect("127.0.0.1","root","","DPS");
 $sql_profile= "select customerName,customerEmail,customerTel from customer_info where userID='$userID' ";
 $result_profile = mysqli_query($con,$sql_profile);
 
@@ -29,7 +29,7 @@ $row = mysqli_fetch_array($result_profile);
 	$customerEmail	= $row['customerEmail'];
 	$customerTel 	= $row['customerTel'];
 
-$con=mysqli_connect("localhost","root","","DPS");
+$con=mysqli_connect("127.0.0.1","root","","DPS");
 $sql_order= "SELECT orderID,productID,promotionID,paymentChannel,orderTime,orderPrice,commentContent FROM `order` WHERE userID=11 ";
 $result_order = mysqli_query($con,$sql_order);
 $order_amount = mysqli_num_rows($result_order);

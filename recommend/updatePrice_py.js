@@ -13,12 +13,12 @@
 //    document.getElementById("updPrice").addEventListener('click', checkPythonResults(), false);
 //
 //});
-window.onload = function(){
-    var btn = document.getElementById("updPrice");
-    btn.addEventListener('click', checkPythonResults(), false);
-}
-
-
+//window.onload = function(){
+//    var btn = document.getElementById("updPrice");
+//    btn.addEventListener('click', checkPythonResults(), false);
+//}
+//document.getElementById("updPrice").onclick = function(){checkPythonResults()};
+$('#updPrice').click(checkPythonResults());
 
 function checkPythonResults(){
     var execRes = "";

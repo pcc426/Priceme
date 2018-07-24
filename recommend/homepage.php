@@ -90,6 +90,17 @@ if(isset($_SESSION['userName'])){
                             <td>
                                 <input type="submit" value="Search" class="textbox" style="color: #fff;background-color: #d44a4d; border-radius: 5px";>
                             </td>
+                            <!--Price update section start-->
+                            <td>
+                                <button id="updPrice">Refresh Price!</button>
+                            </td>
+                            <td>
+                                <label>update results:</label>
+                                <div id="python-result"> </div>
+                            </td>
+                            <script type="text/javascript" src="./updatePrice_py.js"></script>
+
+                            <!--Price update section end-->
                         </tr>
                     </table>
                     </form>

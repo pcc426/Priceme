@@ -95,10 +95,10 @@ if(isset($_SESSION['userName'])){
                             <td>
                                 <input type="submit" value="Search" class="textbox" style="color: #fff;background-color: #d44a4d; border-radius: 5px";>
                             </td>
+                            <!--Price update section start-->
                             <td>
                                 <button id="updPrice">Refresh Price!</button>
                             </td>
-                            <!--Price update section start-->
                             <td>
                                 <label>update results:</label>
                                 <div id="python-result"> </div>

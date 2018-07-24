@@ -98,12 +98,16 @@ if(isset($_SESSION['userName'])){
                             <tr>
                                 <?php
                                 $i=0;
-								if($POST_vendorType="1"){
+								if($_POST['vendorType']="1" && $_POST["productName"]!=""){
 									$sql3="select * from vendor_info where vendorName like '%$productName%'";
 								}
-								else if($POST_productName=""){
+								else if($_POST['vendorType']!="1" && $_POST["productName"]=""){
 									$sql3="select * from vendor_info where vendorTypeID = '$vendorType'";
-								}else{
+								}
+								else if($_POST['vendorType']="1" && $_POST["productName"]=""){
+									echo "<script>alert('Please input vendor category or vendor name!')</script>";
+								}
+								else{
                                 $sql3="select * from vendor_info where vendorTypeID = '$vendorType'and vendorName like '%$productName%'";
 								}
                                 $result3=mysqli_query($conn,$sql3);

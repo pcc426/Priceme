@@ -11,14 +11,21 @@
 //    //checkPythonResults();
 //    //$('#updPrice').click(checkPythonResults());
 //    document.getElementById("updPrice").addEventListener('click', checkPythonResults(), false);
-//
+
 //});
 //window.onload = function(){
-//    var btn = document.getElementById("updPrice");
-//    btn.addEventListener('click', checkPythonResults(), false);
+//    //var btn = document.getElementById("updPrice");
+//    //var btn = $.("#updPrice");
+//    //btn.addEventListener('click', checkPythonResults(), false);
+//    $.('#updPrice').onclick = function(){
+//        alert("hei!");
+//    }
 //}
 //document.getElementById("updPrice").onclick = function(){checkPythonResults()};
-$('#updPrice').click(checkPythonResults());
+$('#updPrice').click(function(){
+    checkPythonResults();
+});
+
 
 function checkPythonResults(){
     var execRes = "";
@@ -45,7 +52,8 @@ function checkPythonResults(){
                     //    //$execRes+= 	n;
                     //
                     //});
-                    execRes+= 	"<p>" + result["data"] + "</p>";  //If the data is not iterable, just append
+                    //execRes+= 	"<p>" + result["data"] + "</p>";  //If the data is not iterable, just append
+                    execRes+= result["data"];  //If the data is not iterable, just append
                 }
 
                 $('#python-result').empty();

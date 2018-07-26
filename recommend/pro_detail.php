@@ -85,12 +85,12 @@ if(isset($_SESSION['userName'])){
                             </tr>
                             <tr>
                                 <td>
-                                    <?php echo $data['productName']?>
+                                    <span style="font-weight:bold;font-size:20px;"><?php echo $data['productName']?></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    Price:$<?php echo $data['currentPrice']?>
+                                    Price:&nbsp;<span style="color:#ca1515;font-size:20px;">$<?php echo $data['currentPrice']?></span>
                                 </td>
                             </tr>
                             <tr>
@@ -116,8 +116,21 @@ if(isset($_SESSION['userName'])){
 					<fieldset><legend><h4>Coupon details</h4></legend>
                         <table style="margin: 10px;">
                             <tr>
-                                <td>
-                                    <?php echo $data['productDescription']?>
+                                <td height="50px" style="vertical-align:top;">
+									<?php 
+										$str = $data['productDescription'];
+										$len = strlen($str);
+										for($i=0; $i<=$len; $i++)
+										{
+											if($str[$i] == ";")
+												echo "<br>";
+											else
+												echo $str[$i];
+										}
+									?>
+                                    <!--<textarea rows="5" cols="140" style="border: none">
+                                        <?php echo $data['productDescription']?>
+                                    </textarea>-->
                                 </td>
                             </tr>
                         </table>

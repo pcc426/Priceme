@@ -89,8 +89,8 @@
             $_creditCardExpiryDate = $order->getCreditCardExpiryDate();
             $_checkNo = $order->getCheckNo();
             $_orderPrice = $order->getOrderPrice();
-            $_productScore = 5;
-            $_vendorScore = 5;
+            $_productScore = 4;
+            $_vendorScore = 4;
             $_inventoryRate = $order->getInventoryRate();
             $_effectTimeLeft = $order->getEffectTimeLeft();
 
